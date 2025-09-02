@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { CreateScenarioDto } from './dto/create-scenario.dto';
 import { UpdateScenarioDto } from './dto/update-scenario.dto';
@@ -7,8 +8,9 @@ import { CreateScenarioUseCase } from './use-cases';
 export class ScenarioService {
   constructor(private readonly createScenarioUseCase: CreateScenarioUseCase) {}
 
-  create(createScenarioDto: CreateScenarioDto) {
-    return this.createScenarioUseCase.execute(createScenarioDto);
+
+  create(data: CreateScenarioDto) {
+    return this.createScenarioUseCase.execute(data);
   }
 
   findAll() {

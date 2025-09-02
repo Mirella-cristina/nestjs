@@ -1,1 +1,2 @@
-export * from './create-scenario.repository';
+export * from './Create-Scenario.Repository';
+export * from './list-Scenario.Repository';
