@@ -10,3 +10,4 @@ export class ListScenarioRepository {
     return this.prisma.scenario.findMany();   
   }
 }
+                                                                           
