@@ -8,6 +8,6 @@ export class UpdateScenarioRepository {
     constructor(private readonly prisma: PrismaService) {}
 
     async update (id: string, data: UpdateScenarioDto) {
-        return this.prisma.scenario.update({ where: { id: id }, data: data });
+        return this.prisma.scenario.update({ where: { id }, data });
     }
 }
