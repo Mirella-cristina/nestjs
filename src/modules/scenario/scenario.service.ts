@@ -5,7 +5,6 @@ import { UpdateScenarioDto } from './dto/update-scenario.dto';
 import { CreateScenarioUseCase } from './use-cases/create-scenario.use-case';
 import { ListScenarioUsecases } from './use-cases/list-scenario.use-cases';
 import { DeleteScenarioUseCase, UpdateScenarioUseCase } from './use-cases';
-
 @Injectable()
 export class ScenarioService {
   constructor(
