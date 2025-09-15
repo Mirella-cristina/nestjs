@@ -1,4 +1,3 @@
--- CreateTable
 CREATE TABLE "public"."Scenario" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL,
@@ -22,7 +21,7 @@ CREATE TABLE "public"."Option" (
 CREATE TABLE "public"."Criterion" (
     "id" TEXT NOT NULL,
     "name" TEXT NOT NULL,
-    "weight" DOUBLE PRECISION NOT NULL,
+    "weigth" DOUBLE PRECISION NOT NULL,
     "active" BOOLEAN NOT NULL DEFAULT true,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
