@@ -4,6 +4,9 @@ import { ListScenarioRepository } from "../repository";
 
 @Injectable ()
 export class ListScenarioUsecases {
+    list() {
+      throw new Error('Method not implemented.');
+    }
     constructor(
         private readonly listScenarioRepository: ListScenarioRepository,
         private readonly logger: Logger,

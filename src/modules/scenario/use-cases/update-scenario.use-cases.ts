@@ -5,6 +5,9 @@ import { UpdateScenarioDto } from "../dto/update-scenario.dto";
 
 @Injectable ()
 export class UpdateScenarioUseCase {
+    update(id: string, data: UpdateScenarioDto) {
+      throw new Error('Method not implemented.');
+    }
     constructor(
         private readonly updateScenarioRepository: UpdateScenarioRepository,
         private readonly logger: Logger,

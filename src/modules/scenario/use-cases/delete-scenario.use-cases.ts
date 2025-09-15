@@ -4,6 +4,9 @@ import { DeleteScenarioRepository } from "../repository/delete-scenario.reposito
 
 @Injectable ()
 export class DeleteScenarioUseCase {
+    delete(id: string) {
+      throw new Error('Method not implemented.');
+    }
     prisma: any;
     constructor(
         private readonly deleteScenarioRepository: DeleteScenarioRepository,
