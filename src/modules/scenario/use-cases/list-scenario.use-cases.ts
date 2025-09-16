@@ -4,9 +4,7 @@ import { ListScenarioRepository } from "../repository";
 
 @Injectable ()
 export class ListScenarioUsecases {
-    list() {
-      throw new Error('Method not implemented.');
-    }
+    
     constructor(
         private readonly listScenarioRepository: ListScenarioRepository,
         private readonly logger: Logger,
@@ -14,7 +12,7 @@ export class ListScenarioUsecases {
 
     async execute () {
         try {
-            const scenario = await this.listScenarioRepository.list();
+            const scenario = await this.listScenarioRepository.execute();
             return scenario;
         }
          catch (error) {

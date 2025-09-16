@@ -4,9 +4,12 @@ import { DeleteScenarioRepository } from "../repository/delete-scenario.reposito
 
 @Injectable ()
 export class DeleteScenarioUseCase {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     delete(id: string) {
       throw new Error('Method not implemented.');
     }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+   
     prisma: any;
     constructor(
         private readonly deleteScenarioRepository: DeleteScenarioRepository,

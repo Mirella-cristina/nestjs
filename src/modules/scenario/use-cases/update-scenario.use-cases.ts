@@ -5,6 +5,7 @@ import { UpdateScenarioDto } from "../dto/update-scenario.dto";
 
 @Injectable ()
 export class UpdateScenarioUseCase {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     update(id: string, data: UpdateScenarioDto) {
       throw new Error('Method not implemented.');
     }

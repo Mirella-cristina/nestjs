@@ -18,7 +18,7 @@ export class ScenarioService {
   }
 
   findAll() {
-    return this.listScenarioUseCase.list();
+    return this.listScenarioUseCase.execute();
   }
 
   findOne(id: string) {
