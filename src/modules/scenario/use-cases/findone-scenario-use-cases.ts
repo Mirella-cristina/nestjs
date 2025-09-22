@@ -4,23 +4,23 @@ import { FindOneScenarioRepository } from '../repository/findone-scenario.reposi
 
 @Injectable()
 export class FindOneScenarioUseCase {
-    constructor(
-        private readonly findoneScenarioRepository: FindOneScenarioRepository,
-        private readonly logger: Logger,
-    ) {}
+  constructor(
+    private readonly findoneScenarioRepository: FindOneScenarioRepository,
+    private readonly logger: Logger,
+  ) {}
 
-    async findone(id:string) {
-        try {
-            const scenario = await this.findoneScenarioRepository.findone(id);
-            this.logger.log("Scenario found successfully");
-            if (!scenario) return new NotFoundException("Scenario not found");
-            return scenario;
-        } catch (error) {
-            if (error instanceof NotFoundException) {
-                this.logger.warn("Scenario not found");
-            }
-            this.logger.error(error);
-            throw error;
-        }
+  async execute(id: string) {
+    try {
+      const scenario = await this.findoneScenarioRepository.findone(id);
+      this.logger.log('Scenario found successfully');
+      if (!scenario) return new NotFoundException('Scenario not found');
+      return scenario;
+    } catch (error) {
+      if (error instanceof NotFoundException) {
+        this.logger.warn('Scenario not found');
+      }
+      this.logger.error(error);
+      throw error;
     }
+  }
 }

@@ -1,35 +1,43 @@
-/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Injectable, Logger } from '@nestjs/common';
+/* eslint-disable prettier/prettier */
+import { Injectable } from '@nestjs/common';
 import { CreateScenarioDto } from './dto/create-scenario.dto';
 import { UpdateScenarioDto } from './dto/update-scenario.dto';
-import { CreateScenarioUseCase, ListScenarioUsecases, DeleteScenarioUseCase, FindOneScenarioUseCase, UpdateScenarioUseCase } from './use-cases';
+import { CreateScenarioUseCase } from './use-cases/create-scenario.use-case';
+import { ListScenarioUsecases } from './use-cases/list-scenario.use-cases';
+import {
+  DeleteScenarioUseCase,
+  FindOneScenarioUseCase,
+  UpdateScenarioUseCase,
+} from './use-cases';
 
 @Injectable()
 export class ScenarioService {
-  constructor(private readonly createScenarioUseCase: CreateScenarioUseCase, 
-    private readonly listScenarioUseCase: ListScenarioUsecases, 
-    private readonly findoneScenarioUseCase: FindOneScenarioUseCase,
+  constructor(
+    private readonly createScenarioUseCase: CreateScenarioUseCase,
+    private readonly listScenarioUseCases: ListScenarioUsecases,
     private readonly deleteScenarioUseCase: DeleteScenarioUseCase,
-    private readonly updateScenarioUseCase: UpdateScenarioUseCase) { }
-  
+    private readonly findonescenarioUseCase: FindOneScenarioUseCase,
+    private readonly updateScenarioUseCase: UpdateScenarioUseCase,
+  ) {}
+
   create(data: CreateScenarioDto) {
     return this.createScenarioUseCase.execute(data);
   }
 
   findAll() {
-    return this.listScenarioUseCase.execute();
+    return this.listScenarioUseCases.execute();
   }
 
   findOne(id: string) {
-    return this.findoneScenarioUseCase.findone(id);
+    return this.findonescenarioUseCase.execute(id);
   }
 
-  update(id: string, data: UpdateScenarioDto) {
-    return this.updateScenarioUseCase.update(id, data);
+  update(id: string, updateScenarioDto: UpdateScenarioDto) {
+    return this.updateScenarioUseCase.execute(id, updateScenarioDto);
   }
 
   remove(id: string) {
-    return this.deleteScenarioUseCase.delete(id);
+    return this.deleteScenarioUseCase.execute(id);
   }
 }

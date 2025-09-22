@@ -1,27 +1,27 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, Logger } from "@nestjs/common";
-import { DeleteScenarioRepository } from "../repository/delete-scenario.repository";
+import { Injectable, Logger } from '@nestjs/common';
+import { DeleteScenarioRepository } from '../repository/delete-scenario.repository';
 
-@Injectable ()
+@Injectable()
 export class DeleteScenarioUseCase {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    delete(id: string) {
-      throw new Error('Method not implemented.');
-    }
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-   
-    prisma: any;
-    constructor(
-        private readonly deleteScenarioRepository: DeleteScenarioRepository,
-        private readonly logger: Logger,
-    ) {}
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  delete(id: string) {
+    throw new Error('Method not implemented.');
+  }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
 
-    async execute(id: string) {
-        try {
-            return await this.deleteScenarioRepository.delete(id);
-        } catch (error) {
-            this.logger.error(error);
-            throw error;
-        }
+  prisma: any;
+  constructor(
+    private readonly deleteScenarioRepository: DeleteScenarioRepository,
+    private readonly logger: Logger,
+  ) {}
+
+  async execute(id: string) {
+    try {
+      return await this.deleteScenarioRepository.delete(id);
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
     }
+  }
 }

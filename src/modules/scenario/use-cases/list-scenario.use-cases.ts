@@ -1,23 +1,21 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, Logger } from "@nestjs/common";
-import { ListScenarioRepository } from "../repository";
+import { Injectable, Logger } from '@nestjs/common';
+import { ListScenarioRepository } from '../repository';
 
-@Injectable ()
+@Injectable()
 export class ListScenarioUsecases {
-    
-    constructor(
-        private readonly listScenarioRepository: ListScenarioRepository,
-        private readonly logger: Logger,
-    ) {}
+  constructor(
+    private readonly listScenarioRepository: ListScenarioRepository,
+    private readonly logger: Logger,
+  ) {}
 
-    async execute () {
-        try {
-            const scenario = await this.listScenarioRepository.execute();
-            return scenario;
-        }
-         catch (error) {
-            this.logger.error(error);
-            throw error;
-        }
+  async execute() {
+    try {
+      const scenario = await this.listScenarioRepository.execute();
+      return scenario;
+    } catch (error) {
+      this.logger.error(error);
+      throw error;
     }
+  }
 }

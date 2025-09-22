@@ -1,5 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ScenarioService } from './scenario.service';
 import { CreateScenarioDto } from './dto/create-scenario.dto';
 import { UpdateScenarioDto } from './dto/update-scenario.dto';
@@ -24,7 +32,10 @@ export class ScenarioController {
   }
 
   @Patch(':id')
-  update(@Param('id') id: string, @Body() updateScenarioDto: UpdateScenarioDto) {
+  update(
+    @Param('id') id: string,
+    @Body() updateScenarioDto: UpdateScenarioDto,
+  ) {
     return this.scenarioService.update(id, updateScenarioDto);
   }
 

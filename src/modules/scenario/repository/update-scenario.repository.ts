@@ -1,13 +1,13 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from "@nestjs/common";
-import { PrismaService } from "src/shared/databases/prisma.database";
-import { UpdateScenarioDto } from "../dto/update-scenario.dto";
+import { Injectable } from '@nestjs/common';
+import { PrismaService } from 'src/shared/databases/prisma.database';
+import { UpdateScenarioDto } from '../dto/update-scenario.dto';
 
 @Injectable()
 export class UpdateScenarioRepository {
-    constructor(private readonly prisma: PrismaService) {}
+  constructor(private readonly prisma: PrismaService) {}
 
-    async update (id: string, data: UpdateScenarioDto) {
-        return this.prisma.scenario.update({ where: { id }, data });
-    }
+  async update(id: string, data: UpdateScenarioDto) {
+    return this.prisma.scenario.update({ where: { id }, data });
+  }
 }
