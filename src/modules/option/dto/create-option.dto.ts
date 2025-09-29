@@ -1,2 +1,5 @@
-/* eslint-disable prettier/prettier */
-export class CreateOptionDto {}
+export class CreateOptionDto {
+  name: string;
+  description: string;
+  scenarioId: string;
+}

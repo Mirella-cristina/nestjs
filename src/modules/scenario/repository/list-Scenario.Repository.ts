@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Injectable } from '@nestjs/common';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {  Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/shared/databases/prisma.database';
 
 @Injectable()
