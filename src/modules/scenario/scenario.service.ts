@@ -6,7 +6,7 @@ import { UpdateScenarioDto } from './dto/update-scenario.dto';
 import { CreateScenarioUseCase } from './use-cases/create-scenario.use-case';
 import { ListScenarioUsecases } from './use-cases/list-scenario.use-cases';
 import {
-  DeleteScenarioUseCase,
+  removeScenarioUseCase,
   FindOneScenarioUseCase,
   UpdateScenarioUseCase,
 } from './use-cases';
@@ -16,7 +16,7 @@ export class ScenarioService {
   constructor(
     private readonly createScenarioUseCase: CreateScenarioUseCase,
     private readonly listScenarioUseCases: ListScenarioUsecases,
-    private readonly deleteScenarioUseCase: DeleteScenarioUseCase,
+    private readonly deleteScenarioUseCase: removeScenarioUseCase,
     private readonly findonescenarioUseCase: FindOneScenarioUseCase,
     private readonly updateScenarioUseCase: UpdateScenarioUseCase,
   ) {}

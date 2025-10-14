@@ -1,12 +1,12 @@
-/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from 'src/shared/databases/prisma.database';
 
 @Injectable()
-export class removeScenarioRepository {
+export class ListOptionRepository {
   constructor(private readonly prisma: PrismaService) {}
 
-  async remove(id: string) {
-    return this.prisma.scenario.delete({ where: { id: id } });
+  async list() {
+    const option = await this.prisma.option.findMany({});
+    return option;
   }
 }

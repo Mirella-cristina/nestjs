@@ -1,26 +1,41 @@
 import { Injectable } from '@nestjs/common';
 import { CreateOptionDto } from './dto/create-option.dto';
 import { UpdateOptionDto } from './dto/update-option.dto';
+import { CreateOptionUseCase } from './use-cases/create-option.use-case';
+import { ListOptionUseCase } from './use-cases/list-option.use-case';
+import {
+  DeleteOptionUseCase,
+  FindOneOptionUseCase,
+  UpdateOptionUseCase,
+} from './use-cases';
 
 @Injectable()
 export class OptionService {
-  create(createOptionDto: CreateOptionDto) {
-    return 'This action adds a new option';
+  constructor(
+    private readonly createOptionUseCase: CreateOptionUseCase,
+    private readonly listOptionUseCase: ListOptionUseCase,
+    private readonly deleteOptionUseCase: DeleteOptionUseCase,
+    private readonly updateOptionUseCase: UpdateOptionUseCase,
+    private readonly findoneOptionUseCase: FindOneOptionUseCase,
+  ) {}
+
+  create(data: CreateOptionDto) {
+    return this.createOptionUseCase.execute(data);
   }
 
   findAll() {
-    return `This action returns all option`;
+    return this.listOptionUseCase.execute();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} option`;
+  findOne(id: string) {
+    return this.findoneOptionUseCase.execute(id);
   }
 
-  update(id: number, updateOptionDto: UpdateOptionDto) {
-    return `This action updates a #${id} option`;
+  update(id: string, updateOptionDto: UpdateOptionDto) {
+    return this.updateOptionUseCase.execute(id, updateOptionDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} option`;
+  remove(id: string) {
+    return this.deleteOptionUseCase.execute(id);
   }
 }
