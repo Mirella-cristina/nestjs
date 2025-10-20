@@ -1,17 +1,42 @@
+/* eslint-disable prettier/prettier */
 import { ApiProperty } from '@nestjs/swagger';
-import { IsBoolean, IsNotEmpty, IsNumber, IsString } from 'class-validator';
-
+import {
+  IsBoolean,
+  IsDate,
+  IsNotEmpty,
+  IsNumber,
+  IsString,
+} from 'class-validator';
 export class CreateCriterionDto {
   @IsString()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'The title of the scenario',
+    example: 'Choose the best programming language',
+  })
   name: string;
+
   @IsNumber()
   @IsNotEmpty()
-  @ApiProperty()
-  weigth: number;
+  @ApiProperty({
+    description: 'The title of the scenario',
+    example: 'Choose the best programming language',
+  })
+  weight: number;
+
   @IsBoolean()
   @IsNotEmpty()
-  @ApiProperty()
+  @ApiProperty({
+    description: 'The title of the scenario',
+    example: 'Choose the best programming language',
+  })
   active: boolean;
+
+  @IsDate()
+  @IsNotEmpty()
+  @ApiProperty({
+    description: 'The title of the scenario',
+    example: 'Choose the best programming language',
+  })
+  createdAt: Date;
 }

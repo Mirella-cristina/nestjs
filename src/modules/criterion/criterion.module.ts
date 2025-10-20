@@ -3,7 +3,7 @@ import { CriterionService } from './criterion.service';
 import { CriterionController } from './criterion.controller';
 import * as UseCases from './use-cases';
 import * as Repositories from './repository';
-import { SharedModule } from 'src/shared/shared.modules';
+import { SharedModule } from '../../shared/shared.module';
 
 const useCases = Object.values(UseCases);
 const repositories = Object.values(Repositories);
