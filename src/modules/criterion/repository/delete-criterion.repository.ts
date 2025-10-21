@@ -6,6 +6,6 @@ export class DeleteCriterionRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async delete(id: string) {
-    return this.prisma.criterion.delete({ where: { id: id } });
+    return this.prisma.criterion.delete({ where: { id } });
   }
 }

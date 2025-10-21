@@ -7,6 +7,6 @@ export class UpdateCriterionRepository {
   constructor(private readonly prisma: PrismaService) {}
 
   async update(id: string, data: UpdateCriterionDto) {
-    return this.prisma.criterion.update({ where: { id: id }, data: data });
+    return this.prisma.criterion.update({ where: { id }, data });
   }
 }
