@@ -19,7 +19,7 @@ export class OptionService {
     private readonly findoneOptionUseCase: FindOneOptionUseCase,
   ) {}
 
-  create(data: CreateOptionDto) {
+  create(scenarioId: string, data: CreateOptionDto) {
     return this.createOptionUseCase.execute(data);
   }
 
