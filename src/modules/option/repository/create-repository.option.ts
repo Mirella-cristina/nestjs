@@ -11,14 +11,14 @@ export class CreateOptionRepository {
       data: {
         ...data,
         scenarioId,
-        },
-        include: {
-          scores: {
-            include: {
-              criterion: true,
-            },
+      },
+      include: {
+        scores: {
+          include: {
+            criterion: true,
           },
         },
-      });
+      },
+    });
   }
 }
